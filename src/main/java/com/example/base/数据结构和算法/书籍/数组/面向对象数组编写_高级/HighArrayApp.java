@@ -1,0 +1,42 @@
+package com.example.base.数据结构和算法.书籍.数组.面向对象数组编写_高级;
+
+/**
+ * @author jiwei.xue
+ * @date 2020/12/21 18:14
+ */
+public class HighArrayApp {
+
+    public static void main(String[] args) {
+        int maxSize = 100;
+
+        HighArray arr;
+        arr = new HighArray(maxSize);
+
+        arr.insert(77);
+        arr.insert(99);
+        arr.insert(44);
+        arr.insert(55);
+        arr.insert(22);
+        arr.insert(88);
+        arr.insert(11);
+        arr.insert(00);
+        arr.insert(66);
+        arr.insert(33);
+
+        arr.display();
+
+        int searchKey = 35;
+        if (arr.find(searchKey)) {
+            System.out.println("Found " + searchKey);
+        } else {
+            System.out.println("Can not find " + searchKey);
+        }
+
+        arr.delete(00);
+        arr.delete(55);
+        arr.delete(99);
+
+        arr.display();
+
+    }
+}

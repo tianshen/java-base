@@ -1,0 +1,12 @@
+一个线程 --> 多个线程 --> selector
+
+BIO 同步阻塞
+
+NIO 同步非阻塞
+
+netty 一主多存 多主多存  （线程模型）
+
+从客户端角度:
+从tail --> head   出站 outBound
+从head --> tail   入站 inBound
+
