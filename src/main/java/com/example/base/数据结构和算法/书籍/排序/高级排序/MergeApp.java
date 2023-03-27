@@ -46,6 +46,38 @@ public class MergeApp {
         }
     }
 
+
+    /**
+     * 合并 对两个有序数组合并
+     *
+     * @param arrA
+     * @param sizeA
+     * @param arrB
+     * @param sizeB
+     * @param arrC
+     */
+    public static void mergeX(int[] arrA, int sizeA, int[] arrB, int sizeB, int[] arrC) {
+        int aIndex = 0;
+        int bIndex = 0;
+        int cIndex = 0;
+        while (aIndex < sizeA && bIndex < sizeB) {
+            if (arrA[aIndex] < arrB[bIndex]) {
+                arrC[cIndex++] = arrA[aIndex++];
+            } else {
+                arrC[cIndex++] = arrB[bIndex++];
+            }
+        }
+
+        while (aIndex < sizeA) {
+            arrC[cIndex++] = arrA[aIndex++];
+        }
+
+        while (bIndex < sizeB) {
+            arrC[cIndex++] = arrB[bIndex++];
+        }
+
+    }
+
     /**
      * @param theArray
      * @param size

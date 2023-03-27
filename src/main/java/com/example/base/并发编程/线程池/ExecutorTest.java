@@ -14,6 +14,9 @@ public class ExecutorTest {
             System.out.println("测试");
 
         });
+        threadPoolExecutor.shutdown(); // 对应的线程池的状态 SHUTDOWN  线程被中断
+        threadPoolExecutor.shutdownNow(); // 对应的线程池的状态  STOP
+
 
     }
 }

@@ -11,7 +11,7 @@ public class SelectSort {
     public static void main(String[] args) {
 
         long[] arr = new long[]{23, 4, 67, 100, 300, 97, 81};
-        selectSort2(arr);
+        selectSortS(arr);
         for (int j = 0; j < arr.length; j++) {
             System.out.println(arr[j] + " ");
         }
@@ -88,5 +88,22 @@ public class SelectSort {
         long temp = arr[one];
         arr[one] = arr[two];
         arr[two] = temp;
+    }
+
+    /**
+     * 把最小的值的坐标找出来 然后放到最前面就好了 只有1次交换
+     * @param arr
+     */
+    public static void selectSortS(long[] arr) {
+        int out, min, in;
+        for (out = 0; out < arr.length - 1; out++) {
+            min = out;
+            for (in = out + 1; in < arr.length ; in++) {
+                if (arr[in] < arr[min]) {
+                    min = in;
+                }
+            }
+            swap(arr, out, min);
+        }
     }
 }

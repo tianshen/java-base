@@ -10,6 +10,9 @@ public class StackX {
 
     private long[] stackArray;
 
+    /**
+     * 栈顶元素的下标 通过这个下表可以控制代码的编写方式
+     */
     private int top;
 
     public StackX(int size) {
@@ -20,6 +23,7 @@ public class StackX {
 
     /**
      * 入栈
+     *
      * @param j
      */
     public void push(long j) {
@@ -28,6 +32,7 @@ public class StackX {
 
     /**
      * 出栈
+     *
      * @return
      */
     public long pop() {
@@ -36,6 +41,7 @@ public class StackX {
 
     /**
      * 查看栈元素
+     *
      * @return
      */
     public long peek() {
@@ -44,6 +50,7 @@ public class StackX {
 
     /**
      * 判断栈是否为空
+     *
      * @return
      */
     public boolean isEmpty() {

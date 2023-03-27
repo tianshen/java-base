@@ -12,7 +12,7 @@ public class BubbleSort {
     public static void main(String[] args) {
 
         long[] arr = new long[]{23, 4, 67, 100, 300, 97, 81};
-        bubbleSort02Re(arr);
+        bubbleSort02ReRe(arr);
         for (int j = 0; j < arr.length; j++) {
             System.out.println(arr[j] + " ");
         }
@@ -97,4 +97,34 @@ public class BubbleSort {
             }
         }
     }
+
+    public static void bubbleSort(long[] arr) {
+        int out, in;
+        for (out = arr.length - 1; out > 1; out--) {
+            for (in = 0; in < out; in++) {
+                if (arr[in] > arr[in + 1]) {
+                    swap(arr, in, in + 1);
+                }
+            }
+        }
+    }
+
+    public static void bubbleSort02ReRe(long[] arr) {
+        int i, j;
+        for (i = 0; i < arr.length - 1; i++) {
+            for (j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr, j, j + 1);
+                }
+            }
+        }
+    }
+
+
+
 }
+
+
+
+
+

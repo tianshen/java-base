@@ -55,7 +55,7 @@ public class AvlTree<E extends Comparable<E>> {
         return size == 0;
     }
 
-
+    // 获取平衡因子
     private int getBalanceFactor(Node node) {
         if (node == null) {
             return 0;

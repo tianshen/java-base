@@ -2,6 +2,11 @@ package com.example.base.数据结构和算法.书籍.排序.高级排序;
 
 /**
  * 归并排序
+ * 分3步
+ * 1、递归拆分
+ * 2、合并有序列表
+ *
+ *
  */
 public class MergeSortApp {
 
@@ -9,7 +14,7 @@ public class MergeSortApp {
 
     public static void main(String[] args) {
         long[] workSpace = new long[9];
-        recMergeSort(workSpace, 0, workSpace.length - 1);
+        recMergeSort(workSpace, 0, theArray.length - 1);
         for (int j = 0; j < theArray.length; j++) {
             System.out.println(theArray[j] + " ");
         }

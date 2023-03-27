@@ -12,6 +12,7 @@ class Person {
 }
 
 class Dog implements Animal{
+    @Override
     public void eat() {
         System.out.println("狗啃骨头");
     }
@@ -24,12 +25,14 @@ class Dog implements Animal{
 //我们希望的是，当下层新增一个动物时，上层应该不知道，上层代码应该不用改动
 
 class Cat implements Animal{
+    @Override
     public void eat() {
         System.out.println("猫吃鱼");
     }
 }
 
 class Panda implements Animal {
+    @Override
     public void eat() {
         System.out.println("熊猫吃竹子");
     }

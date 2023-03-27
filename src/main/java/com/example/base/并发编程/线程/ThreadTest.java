@@ -4,6 +4,7 @@ import lombok.Synchronized;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
+import java.util.function.Supplier;
 
 public class ThreadTest {
 
@@ -15,20 +16,65 @@ public class ThreadTest {
 
         // 协程 -- 用户级别的线程 -- 只在用户态中生成，减少用户态和内核态的切换 -- 减少上下文的切换
 
+//        Thread thread = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                // 锁实例对象
+//                synchronized (this) {
+//                    System.out.println("test");
+//                }
+//            }
+//        });
+//        thread.start();
+//
+//
+//
+//        new FutureTask(() -> null);
+
+//        Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println(Thread.currentThread());
+//                System.out.println("你好");
+//            }
+//        };
+//        runnable.run();
+//
+//
+//        System.out.println("=========================");
+
+//        Thread thread = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println(Thread.currentThread().getName());
+//                System.out.println("run");
+//            }
+//        });
+//        System.out.println(thread.getName());
+//        thread.run();
+//        thread.start();
+////
+//        A a = new A();
+//        a.run();
+
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                // 锁实例对象
-                synchronized (this) {
-                    System.out.println("test");
+                while (true) {
+
+                    System.out.println("11");
                 }
             }
         });
         thread.start();
-
-
-
-        new FutureTask(() -> null);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        thread.interrupt();
+        // System.out.println(thread.isInterrupted());
 
 
     }

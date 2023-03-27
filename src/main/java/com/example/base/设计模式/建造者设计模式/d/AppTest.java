@@ -59,6 +59,7 @@ class AdvancedComputerBuilder implements ComputerBuild {
         computer.setHd("2T固态");
     }
 
+    @Override
     public Computer build() {
         return computer;
     }
@@ -91,6 +92,7 @@ class MiddleComputerBuilder implements ComputerBuild {
         computer.setHd("1T固态");
     }
 
+    @Override
     public Computer build() {
         return computer;
     }
@@ -123,6 +125,7 @@ class LowComputerBuilder implements ComputerBuild{
         computer.setHd("256G固态");
     }
 
+    @Override
     public Computer build() {
         return computer;
     }

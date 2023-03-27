@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.书籍.队列;
+package com.example.base.数据结构和算法.书籍.队列.数组实现队列;
 
 public class Queue {
 
@@ -7,19 +7,19 @@ public class Queue {
     private long[] queArray;
 
     /**
-     * 队列头部
+     * 队列头部 这个是数组的坐标
      */
     private int front;
 
     /**
-     * 队列尾部
+     * 队列尾部 这个是数组的坐标
      */
     private int rear;
 
     private int nItems;
 
     public Queue(int s) {
-        this.maxSize = s;
+        maxSize = s;
         queArray = new long[maxSize];
         // 队列头部
         front = 0;
@@ -35,6 +35,7 @@ public class Queue {
      * @param j
      */
     public void insert(long j) {
+        // 当rear指向队列的最后一位时，说明不能再往后面加了 要重置一下 重新加入
         if (rear == maxSize - 1) {
             rear = -1;
         }

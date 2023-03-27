@@ -111,7 +111,7 @@ public class DefaultThreadPool<Job extends Supplier> implements ThreadPool<Job> 
             while(running) {
                 Job job = null;
                 synchronized (jobs) {
-                    // 如果工作这列表是空的 就等待
+                    // 如果工作列表是空的 就等待
                     if (jobs.isEmpty()) {
                         try {
                             jobs.wait();
