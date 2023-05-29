@@ -1,5 +1,8 @@
 package com.example.base.数据结构和算法.书籍.LRU算法;
 
+/**
+ * 双向链表
+ */
 public class Node {
     //键
     Object key;
@@ -9,7 +12,7 @@ public class Node {
     Node pre;
     //下一个节点
     Node next;
- 
+
     public Node(Object key, Object value) {
         this.key = key;
         this.value = value;

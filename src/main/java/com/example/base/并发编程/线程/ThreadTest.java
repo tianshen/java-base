@@ -3,6 +3,7 @@ package com.example.base.并发编程.线程;
 import lombok.Synchronized;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.FutureTask;
 import java.util.function.Supplier;
 
@@ -75,6 +76,14 @@ public class ThreadTest {
         }
         thread.interrupt();
         // System.out.println(thread.isInterrupted());
+
+
+        CountDownLatch countDownLatch = new CountDownLatch(2);
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
     }

@@ -8,9 +8,9 @@ package com.example.base.数据结构和算法.书籍.图;
 public class Graph {
 
     private final int MAX_VERTS = 20;
-
+    // 顶点数组
     private Vertex[] vertexList;
-
+    // 二维数组 边数组
     private int[][] adjMat;
 
     private int nVerts;
@@ -29,6 +29,7 @@ public class Graph {
             }
         }
         theStackX = new StackX();
+        theQueue = new Queue();
     }
 
     public void addVertex(char lab) {
@@ -48,17 +49,24 @@ public class Graph {
      * 深度优先算法
      */
     public void dfs() {
+        // 设置第一个节点被访问过了
         vertexList[0].wasVisited = true;
+        // 展示节点
         displayVertex(0);
+        // 将节点push到栈中
         theStackX.push(0);
-
         while (!theStackX.isEmpty()) {
             int v = getAdjUnvisitedVertex(theStackX.peek());
+            // 如果后面没有节点
             if (v == -1) {
+                // 则弹出当前节点
                 theStackX.pop();
             } else {
+                // 节点访问过之后设置为true
                 vertexList[v].wasVisited = true;
+                // 展示节点
                 displayVertex(v);
+                // 将节点push到栈中
                 theStackX.push(v);
             }
         }
@@ -69,7 +77,7 @@ public class Graph {
     }
 
     /**
-     * 广度优先算法
+     * 广度优先算法  层序遍历
      */
     public void bfs() {
         vertexList[0].wasVisited = true;

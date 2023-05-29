@@ -31,9 +31,12 @@ class Computer {
 }
 
 class Person {
+    // 关联关系
     private Computer c = new Computer();
 
+    //
     public void shutdownComputer() {
+        // 最少知道原则
       c.shutdown();
     }
 }

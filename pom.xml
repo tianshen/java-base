@@ -25,6 +25,14 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>Finchley.SR1</version>
+<!--            <type>pom</type>-->
+<!--            <scope>import</scope>-->
+        </dependency>
+
         <!-- netty -->
         <dependency>
             <groupId>io.netty</groupId>
@@ -55,6 +63,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.6.5</version>
         </dependency>
         <!--        对象头-->
 <!--        <dependency>-->

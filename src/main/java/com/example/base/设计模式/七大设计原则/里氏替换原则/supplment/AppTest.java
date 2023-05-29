@@ -13,21 +13,21 @@ package com.example.base.设计模式.七大设计原则.里氏替换原则.supp
 
 class Fu {
     public void f1() {
-
+        System.out.println("父类方法");
     }
 }
 
 class Zi extends Fu {
     @Override
     public void f1() {
-        super.f1();
+        //super.f1();
     }
 }
 
 public class AppTest {
 
     public static void main(String[] args) {
-
-
+        Fu zi = new Zi();
+        zi.f1();
     }
 }

@@ -110,8 +110,7 @@ public class AppTest {
 
     public static void main(String[] args) {
         FoodFactory ff = new HamburgerFactory();
+        // 依赖关系
         Bussiness.taste(ff);
-
-
     }
 }

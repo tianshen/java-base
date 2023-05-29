@@ -26,6 +26,9 @@ package com.example.base.设计模式.策略模式.d;
  * 是时候把飞行和叫方法，从鸭子类中分离出来了！（注意:这里的分离和c包中分离不一样）
  */
 
+/**
+ * 飞翔
+ */
 interface FlyBehavior {
     void fly();
 }
@@ -62,6 +65,10 @@ class FlyNoWay implements FlyBehavior {
     }
 }
 
+
+/**
+ * 叫
+ */
 interface QuackBehavior {
     void quack();
 }
@@ -90,6 +97,10 @@ class MuteQuack implements QuackBehavior {
     }
 }
 
+
+/**
+ * 抽象类
+ */
 abstract class Duck {
 
     protected FlyBehavior flyBehavior;

@@ -21,6 +21,7 @@ class Computer {
  */
 class ComputerBuilder {
 
+    // 关联关系
     private Computer computer = new Computer();
 
     public Computer build() {

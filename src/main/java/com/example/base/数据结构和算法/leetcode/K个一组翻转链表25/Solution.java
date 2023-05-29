@@ -24,7 +24,7 @@ public class Solution {
         start.next.next.next = new ListNode(3);
         start.next.next.next.next = new ListNode(4);
         start.next.next.next.next.next = new ListNode(5);
-        ListNode groupEnd = getKGroupEnd(start, 10);
+        ListNode groupEnd = getKGroupEnd(start, 2);
         System.out.println(groupEnd.val);
     }
 }

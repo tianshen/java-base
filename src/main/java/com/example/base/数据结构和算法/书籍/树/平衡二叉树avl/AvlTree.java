@@ -160,7 +160,7 @@ public class AvlTree<E extends Comparable<E>> {
         // 计算平衡因子
         int balanceFactor = getBalanceFactor(node);
         if (balanceFactor > 1 && getBalanceFactor(node.left ) > 0) {
-            //右旋
+            // 右旋
             return rightRotate(node);
         }
         if (balanceFactor < -1 && getBalanceFactor(node.right) < 0) {

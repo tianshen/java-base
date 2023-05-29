@@ -1,14 +1,17 @@
 package com.example.base.并发编程.线程;
 
+import java.sql.Time;
 import java.util.concurrent.TimeUnit;
 
 public class InterruptDemo04 {
     public static void main(String[] args) throws InterruptedException {
+
+        Thread thread1 = new Thread();
         Thread thread = new Thread(() -> {
             for (int i = 0; i < 300; i++) {
                 System.out.println(i);
             }
-            // System.out.println(Thread.currentThread().getName() + "线程调用interrupt()方法后的中断状态02：" + Thread.currentThread().isInterrupted());
+            System.out.println(Thread.currentThread().getName() + "线程调用interrupt()方法后的中断状态02：" + Thread.currentThread().isInterrupted());
         }, "t1");
         thread.start();
         System.out.println(thread.getName() + "线程默认的中断状态：" + thread.isInterrupted());

@@ -18,6 +18,15 @@ public class OrdArray {
         return nElems;
     }
 
+    public static void main(String[] args) {
+        OrdArray ordArray = new OrdArray(10);
+        ordArray.insert(1);
+        ordArray.insert(3);
+        ordArray.insert(4);
+        ordArray.insert(2);
+        ordArray.display();
+    }
+
     /**
      * 二分查找
      *

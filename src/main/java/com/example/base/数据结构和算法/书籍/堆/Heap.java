@@ -1,9 +1,14 @@
 package com.example.base.数据结构和算法.书籍.堆;
 
+import com.example.base.数据结构和算法.leetcode.二叉树.TreeNode;
+import lombok.Data;
+
 /**
  * @author jiwei.xue
  * @date 2021/1/6 15:50
+ * 大顶堆
  */
+@Data
 public class Heap {
 
     private Node[] heapArray;
@@ -34,6 +39,7 @@ public class Heap {
         } else {
             Node newNode = new Node(key);
             heapArray[currentSize] = newNode;
+            // 向上筛选
             trickleUp(currentSize++);
             return true;
         }
@@ -45,11 +51,17 @@ public class Heap {
      * @param index
      */
     public void trickleUp(int index) {
+        // 求出父节点的坐标
         int parent = (index - 1) / 2;
+        // 将新增的节点定义一个临时变量
         Node bottom = heapArray[index];
+        // 向上筛选,拿新增节点和他的父节点进行比较,如果父节点小于新增节点的话
         while (index > 0 && heapArray[parent].getKey() < bottom.getKey()) {
+            // 新增节点和父节点换位置
             heapArray[index] = heapArray[parent];
+            // 更新索引
             index = parent;
+            // 求新的父节点的索引
             parent = (parent - 1) / 2;
         }
         heapArray[index] = bottom;
@@ -104,8 +116,10 @@ public class Heap {
         int oldValue = heapArray[index].getKey();
         heapArray[index].setKey(newValue);
         if (oldValue < newValue) {
+            // 向上筛选
             trickleUp(index);
         } else {
+            // 向下筛选
             trickleDown(index);
         }
         return true;

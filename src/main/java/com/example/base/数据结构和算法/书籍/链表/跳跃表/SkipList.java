@@ -24,6 +24,7 @@ public class SkipList {
     public SkipListEntry head;
 
     public SkipListEntry tail;
+
     public Random r;
 
     /**

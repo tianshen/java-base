@@ -14,6 +14,7 @@ public class QuickSort02App {
     }
 
     public static void recQuickSort(int left, int right) {
+        // 8 - 0 + 1
         int size = right - left + 1;
         if (size <= 3) {
             manualSort(left, right);
@@ -48,6 +49,7 @@ public class QuickSort02App {
         return leftPtr;
     }
 
+    // 33, 66, 22, 77, 55, 11, 99, 44, 88
     public static long medianOf3(int left, int right) {
         int center = (left + right) / 2;
         if (theArray[left] > theArray[center]) {

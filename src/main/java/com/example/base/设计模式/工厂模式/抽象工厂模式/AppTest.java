@@ -152,6 +152,7 @@ public class AppTest {
 
     public static void main(String[] args) {
         Factory ff = new BaoJiFactory();
+        // 依赖关系
         Bussiness.taste(ff);
 
     }

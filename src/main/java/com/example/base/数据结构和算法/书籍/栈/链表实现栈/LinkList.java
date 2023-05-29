@@ -7,6 +7,9 @@ package com.example.base.数据结构和算法.书籍.栈.链表实现栈;
  */
 public class LinkList {
 
+    /**
+     * 第一个节点
+     */
     private Link first;
 
     public LinkList() {

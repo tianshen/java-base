@@ -2,12 +2,22 @@ package com.example.base.数据结构和算法.书籍.LRU算法;
 
 import java.util.HashMap;
 
+/**
+ * lru算法
+ * @param <K>
+ * @param <V>
+ */
 public class LRU<K, V> {
-    private int currentSize;//当前的大小
-    private int capcity;//总容量
-    private HashMap<K, Node> caches;//所有的node节点
-    private Node first;//头节点
-    private Node last;//尾节点
+    //当前的大小
+    private int currentSize;
+    //总容量
+    private int capcity;
+    //所有的node节点
+    private HashMap<K, Node> caches;
+    //头节点
+    private Node first;
+    //尾节点
+    private Node last;
  
     public LRU(int size) {
         currentSize = 0;
@@ -28,6 +38,7 @@ public class LRU<K, V> {
             if (caches.size() >= capcity) {
                 //移除最后一个节点
                 caches.remove(last.key);
+                // 移除链表中最后一个节点
                 removeLast();
             }
             //创建新节点

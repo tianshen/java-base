@@ -1,0 +1,54 @@
+package com.example.base.数据结构和算法.leetcode.限流算法;
+
+/**
+ * TokenBucket 类表示一个令牌桶
+ */
+public class TokenBucket {
+
+    private final int capacity;     // 令牌桶容量
+    private final int rate;         // 令牌生成速率，单位：令牌/秒    主要是这个，令牌桶生成速率
+    private int tokens;             // 当前令牌数量
+    private long lastRefillTimestamp;  // 上次令牌生成时间戳
+
+    /**
+     * 构造函数中传入令牌桶的容量和令牌生成速率。
+     * @param capacity
+     * @param rate
+     */
+    public TokenBucket(int capacity, int rate) {
+        this.capacity = capacity;
+        this.rate = rate;
+        this.tokens = capacity;
+        this.lastRefillTimestamp = System.currentTimeMillis();
+    }
+
+    /**
+     * allowRequest() 方法表示一个请求是否允许通过，该方法使用 synchronized 关键字进行同步，以保证线程安全。
+     * @return
+     */
+    public synchronized boolean allowRequest() {
+        refill();
+        // 如果令牌大于0，则令牌-- 返回true
+        if (tokens > 0) {
+            tokens--;
+            return true;
+            // 返回false
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * refill() 方法用于生成令牌，其中计算令牌数量的逻辑是按照令牌生成速率每秒钟生成一定数量的令牌，
+     * tokens 变量表示当前令牌数量，
+     * lastRefillTimestamp 变量表示上次令牌生成的时间戳。
+     */
+    private void refill() {
+        long now = System.currentTimeMillis();
+        if (now > lastRefillTimestamp) {
+            int generatedTokens = (int) ((now - lastRefillTimestamp) / 1000 * rate);
+            tokens = Math.min(tokens + generatedTokens, capacity);
+            lastRefillTimestamp = now;
+        }
+    }
+}

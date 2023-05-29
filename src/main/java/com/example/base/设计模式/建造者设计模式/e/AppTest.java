@@ -17,6 +17,7 @@ class Computer {
 }
 
 class Director {
+    // 依赖
     public Computer build (ComputerBuild computerBuild) {
         computerBuild.setCpu();
         computerBuild.setGpu();
@@ -69,6 +70,7 @@ class AdvancedComputerBuilder implements ComputerBuild {
         computer.setHd("2T固态");
     }
 
+    @Override
     public Computer build() {
         return computer;
     }
