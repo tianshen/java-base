@@ -6,7 +6,7 @@ package com.example.base.jvm;
 public class JvmTest {
 
     public static void main(String[] args) {
-
+        System.out.println("111");
        //
     }
 }
