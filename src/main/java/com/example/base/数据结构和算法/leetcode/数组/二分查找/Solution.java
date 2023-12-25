@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.leetcode.二分查找;
+package com.example.base.数据结构和算法.leetcode.数组.二分查找;
 
 /**
  * @author xue

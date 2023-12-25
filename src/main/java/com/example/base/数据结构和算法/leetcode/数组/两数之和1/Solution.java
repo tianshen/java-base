@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.leetcode.两数之和1;
+package com.example.base.数据结构和算法.leetcode.数组.两数之和1;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -74,5 +74,24 @@ public class Solution {
         }
         return new int[0];
     }
+
+    /**
+     * 两数之和  使用hashMap
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] twoSum04(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])) {
+                return new int[]{map.get(target - nums[i]), i};
+            }
+            map.put(nums[i], i);
+        }
+        return new int[0];
+    }
+
 
 }

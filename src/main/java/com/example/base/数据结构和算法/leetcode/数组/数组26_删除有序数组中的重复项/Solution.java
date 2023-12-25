@@ -12,6 +12,31 @@ public class Solution {
     }
 
     /**
+     * 使用快慢指针  本质上是把后面的不重复的元素向前提
+     *
+     * @param nums
+     * @return
+     */
+    public static int removeDuplicates02(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        int slow = 0;
+        int fast = 0;
+
+        while (fast < nums.length) {
+            if (nums[slow] != nums[fast]) {
+                // 不等于的时候才去加
+                slow++;
+                nums[slow] = nums[fast];
+            }
+            fast++;
+        }
+        return slow + 1;
+    }
+
+
+    /**
      * 使用快慢指针 删除重复项    本质是把后面的不重复的元素向前提
      * @param nums
      * @return

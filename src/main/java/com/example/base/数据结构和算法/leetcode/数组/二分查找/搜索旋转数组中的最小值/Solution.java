@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.leetcode.二分查找.搜索旋转数组中的最小值;
+package com.example.base.数据结构和算法.leetcode.数组.二分查找.搜索旋转数组中的最小值;
 
 class Solution {
     public int findMin(int[] nums) {

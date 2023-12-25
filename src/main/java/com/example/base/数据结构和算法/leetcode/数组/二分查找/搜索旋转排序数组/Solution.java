@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.leetcode.二分查找.搜索旋转排序数组;
+package com.example.base.数据结构和算法.leetcode.数组.二分查找.搜索旋转排序数组;
 
 /**
  * 将数组一分为二，其中一定有一个是有序的，另一个可能是有序，也能是部分有序。

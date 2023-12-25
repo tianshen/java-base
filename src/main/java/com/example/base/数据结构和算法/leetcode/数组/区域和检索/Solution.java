@@ -10,6 +10,7 @@ public class Solution {
 
     }
 
+
     public static int sumRange(int[] nums, int left, int right) {
         int res = 0;
         for (int i = left; left <= right; left++) {

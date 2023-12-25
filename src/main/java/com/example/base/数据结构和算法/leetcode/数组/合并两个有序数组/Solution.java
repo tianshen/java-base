@@ -14,11 +14,39 @@ public class Solution {
         int m = 6;
         int[] B = {1, 2, 4, 6, 8};
         int n = 5;
-        merge(A, m, B, n);
+        merge04(A, m, B, n);
         for (int i = 0; i <= A.length - 1; i++) {
             System.out.print(A[i] + " ");
         }
 
+    }
+
+
+    /**
+     * 合两个有序数组
+     *
+     * @param A
+     * @param m
+     * @param B
+     * @param n
+     */
+    public static void merge04(int[] A, int m, int[] B, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int index = m + n - 1;
+        while (i >= 0 && j >= 0) {
+            if (A[i] > B[j]) {
+                A[index--] = A[i--];
+            } else {
+                A[index--] = B[j--];
+            }
+        }
+        while (i >= 0) {
+            A[index--] = A[i--];
+        }
+        while (j >= 0) {
+            A[index--] = B[j--];
+        }
     }
 
 
@@ -55,7 +83,7 @@ public class Solution {
             A[index--] = B[j--];
         }
         while (i>= 0) {
-            A[index--] = B[i--];
+            A[index--] = A[i--];
         }
 
     }

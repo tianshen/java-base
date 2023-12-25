@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.leetcode.二分查找.目标第一个和最后一个;
+package com.example.base.数据结构和算法.leetcode.数组.二分查找.目标第一个和最后一个;
 
 class Solution {
     int[] searchRange(int[] nums, int target) {

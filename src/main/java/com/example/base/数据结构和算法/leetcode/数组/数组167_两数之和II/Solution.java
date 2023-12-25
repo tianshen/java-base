@@ -13,6 +13,31 @@ public class Solution {
         }
     }
 
+
+    /**
+     * 两数之和 数组是有序的
+     * @param nums
+     * @param target
+     * @return
+     */
+    public static int[] twoSum02(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+            if (sum == target) {
+                return new int[]{left, right};
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return new int[]{-1, -1};
+    }
+
+
+
     /**
      * 两数之和 进阶版 数组是有序的
      * @param nums

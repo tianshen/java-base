@@ -12,8 +12,23 @@ public class Solution {
         System.out.println(count);
     }
 
+
+    public static int removeElement01(int[] nums, int val) {
+        int slow = 0;
+        int fast = 0;
+        while (fast < nums.length) {
+            if (nums[fast] != val) {
+                // 先赋值  后++
+                nums[slow] = nums[fast];
+                slow++;
+            }
+            fast++;
+        }
+        return slow;
+    }
+
     /**
-     * 移除数组中指定的元素
+     * 移除数组中指定的元素  使用快慢指针
      * @param nums
      * @param val
      * @return
