@@ -15,6 +15,29 @@ public class Solution {
 
     }
 
+
+    /**
+     * 返回倒数第k个节点
+     *
+     * @param head
+     * @param k
+     * @return
+     */
+    public static ListNode kthToLast02(ListNode head, int k) {
+        ListNode first = head;
+        for (int i = 0; i < k; i++) {
+            first = first.next;
+        }
+        ListNode second = head;
+        while (first != null) {
+            first = first.next;
+            second = second.next;
+        }
+        return second;
+    }
+
+
+
     public int kthToLast(ListNode head, int k) {
 
         ListNode first = head;

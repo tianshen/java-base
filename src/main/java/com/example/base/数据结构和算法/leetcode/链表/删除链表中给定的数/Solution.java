@@ -25,9 +25,56 @@ public class Solution {
         }
     }
 
+
+    /**
+     * 删除指定的节点
+     * @param head
+     * @param value
+     * @return
+     */
+    public static Node delete02(Node head, int value) {
+        if (head == null) {
+            return null;
+        }
+        // 处理头节点
+        while (head != null) {
+            if (head.value == value) {
+                head = head.next;
+            } else {
+                break;
+            }
+        }
+
+        if (head == null) {
+            return null;
+        }
+
+        // 处理后面的节点 节点引用问题
+        Node pre = head;
+        Node cur = head.next;
+
+        Node next;
+        while (cur != null) {
+            next = cur.next;
+            if (cur.value == value) {
+                pre.next = next;
+            } else {
+                pre = cur;
+            }
+            cur = next;
+        }
+        return head;
+
+    }
+
+
+
+
+
+
     public static Node delete(Node head, int value) {
         if (head == null) {
-            return head;
+            return null;
         }
 
         // 处理头节点
@@ -39,7 +86,7 @@ public class Solution {
             }
         }
         if (head == null) {
-            return head;
+            return null;
         }
 
         /**
@@ -51,7 +98,7 @@ public class Solution {
         while (cur != null) {
             next = cur.next;
             if (cur.value == value) {
-                prev.next = cur.next;
+                prev.next = next;
                 cur = next;
             } else {
                 prev = cur;

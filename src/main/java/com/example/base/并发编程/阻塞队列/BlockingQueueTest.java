@@ -18,6 +18,7 @@ public class BlockingQueueTest {
         // 最大值为Integer.MAX_VALUE  可能导致内存溢出
         LinkedBlockingQueue<String> linkedBlockingQueue = new LinkedBlockingQueue<>(100);
         linkedBlockingQueue.put("111");
+        linkedBlockingQueue.take();
 
         DelayQueue<OrderInfo> queue = new DelayQueue<>();
         queue.put(new OrderInfo());

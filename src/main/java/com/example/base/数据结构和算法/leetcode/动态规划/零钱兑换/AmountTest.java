@@ -12,6 +12,14 @@ public class AmountTest {
         System.out.println(1);
     }
 
+    /**
+     * 状态：目标金额 amount
+     * 选择：coins数组中列出的所有硬币面额
+     * 函数的定义: 凑出总金额amount 至少需要coinChange（coins，amount）枚硬币
+     * base case：amount = 0时  需要0枚硬币   amount =
+     */
+
+
     public static int coinChange(int[] coins, int amount) {
         // 题目要求的最终结果是 dp(amount)
         return dp(coins, amount);

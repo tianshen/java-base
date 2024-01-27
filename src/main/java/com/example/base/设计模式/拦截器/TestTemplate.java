@@ -8,7 +8,11 @@ public class TestTemplate {
 
     List<Interceptor> interceptorList = Lists.newArrayList();
 
-    public String execute() {
+    public String execute(String url) {
+
+        for (Interceptor interceptor : interceptorList) {
+            interceptor.intercept(url);
+        }
 
         System.out.println("执行execute");
         return "success";

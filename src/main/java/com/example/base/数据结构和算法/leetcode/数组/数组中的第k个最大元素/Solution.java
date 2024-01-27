@@ -8,6 +8,7 @@ public class Solution {
     public int findKthLargest(int[] nums, int k) {
         int len = nums.length;
         // 使用一个含有 k 个元素的最小堆，PriorityQueue 底层是动态数组，为了防止数组扩容产生消耗，可以先指定数组的长度
+        // PriorityQueue<Integer> minHead = new PriorityQueue<>(k, Comparator.comparingInt(a -> a));
         PriorityQueue<Integer> minHeap = new PriorityQueue<>(k, Comparator.comparingInt(a -> a));
         // Java 里没有 heapify ，因此我们逐个将前 k 个元素添加到 minHeap 里
         for (int i = 0; i < k; i++) {

@@ -24,7 +24,7 @@ public class Solution {
             right++;
             // 进行窗口内数据的一系列更新
             window.put(c, window.getOrDefault(c, 0) + 1);
-            // 判断左侧窗口是否要收缩
+            // 判断左侧窗口是否要收缩  收缩的条件是：窗口内的元素是否已经有重复的  如果有重复的话，则缩小窗口
             while (window.get(c) > 1) {
                 char d = s.charAt(left);
                 left++;

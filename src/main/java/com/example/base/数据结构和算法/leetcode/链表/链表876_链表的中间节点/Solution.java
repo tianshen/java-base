@@ -9,6 +9,29 @@ import com.example.base.数据结构和算法.leetcode.链表.ListNodeUtil;
  */
 public class Solution {
 
+
+    /**
+     * 找中间节点
+     * @param head
+     * @return
+     */
+    public static ListNode findMidNode02(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        if (head.next == null) {
+            return head;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
     /**
      * 快慢指针的方法
      *

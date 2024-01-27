@@ -11,5 +11,12 @@ public class Test {
             System.out.println("2222");
         }
 
+
+        int i = 511 & 511;
+        System.out.println(i);
+
+        int i1 = 2 / 512;
+        System.out.println(i1);
+
     }
 }

@@ -8,13 +8,13 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        int[] nums = {2, 3, 3, 4, 8, 10};
-        int search01 = new Solution().binary_search(nums, 3);
-        System.out.println(search01);
+        int[] nums = {2, 3, 3, 3, 3, 4, 8, 10};
+//        int search01 = new Solution().binary_search(nums, 3);
+//        System.out.println(search01);
         int left_bound = new Solution().left_bound(nums, 3);
         System.out.println(left_bound);
-        int right_bound = new Solution().right_bound(nums, 3);
-        System.out.println(right_bound);
+//        int right_bound = new Solution().right_bound(nums, 3);
+//        System.out.println(right_bound);
 
     }
 

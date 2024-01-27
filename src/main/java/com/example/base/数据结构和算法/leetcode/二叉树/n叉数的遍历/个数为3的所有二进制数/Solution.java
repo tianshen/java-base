@@ -4,6 +4,10 @@ package com.example.base.数据结构和算法.leetcode.二叉树.n叉数的遍�
  * @author xue
  * @date 2023/4/10 12:32
  */
+
+/**
+ * 回溯算法的问题
+ */
 public class Solution {
 
     static StringBuilder path = new StringBuilder();

@@ -5,7 +5,7 @@ public class InterceptorTest {
     public static void main(String[] args) {
 
         TestTemplate testTemplate = new TestTemplate();
-        String execute = testTemplate.execute();
+        String execute = testTemplate.execute("");
         System.out.println(execute);
     }
 }

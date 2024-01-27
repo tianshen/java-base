@@ -2,6 +2,8 @@ package com.example.base.netty;
 
 import io.netty.util.concurrent.*;
 
+import java.util.concurrent.ExecutionException;
+
 public class PromiseaTest {
 
     public static void main(String[] args) {
@@ -39,14 +41,18 @@ public class PromiseaTest {
                 }
                 // 设置 promise 的结果
                 // promise.setFailure(new RuntimeException());
-                promise.setSuccess(123456);
+                promise.setSuccess("123456");
             }
         });
 
         // main 线程阻塞等待执行结果
         try {
-            promise.sync();
+            Promise sync = promise.sync();
+            String o = (String)sync.get();
+            System.out.println(o);
         } catch (InterruptedException e) {
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
         }
     }
 }

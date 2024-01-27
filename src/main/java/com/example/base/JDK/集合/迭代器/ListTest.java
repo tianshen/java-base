@@ -15,6 +15,7 @@ public class ListTest {
         list.add("111");
         list.add("222");
         list.add("333");
+        String s = list.get(0);
         System.out.println(list.toString());
         Collections.reverse(list);
         System.out.println(list.toString());

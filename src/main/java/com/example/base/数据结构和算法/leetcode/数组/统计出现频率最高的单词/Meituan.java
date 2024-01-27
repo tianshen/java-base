@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.leetcode.统计出现频率最高的单词;
+package com.example.base.数据结构和算法.leetcode.数组.统计出现频率最高的单词;
 
 import java.util.HashMap;
 import java.util.Iterator;

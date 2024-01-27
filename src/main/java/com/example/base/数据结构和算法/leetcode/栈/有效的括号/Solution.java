@@ -1,9 +1,6 @@
 package com.example.base.数据结构和算法.leetcode.栈.有效的括号;
 
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 有效的括号 20题
@@ -11,8 +8,8 @@ import java.util.Map;
 class Solution {
 
     public static void main(String[] args) {
-        // String s = "()[]{}";
-        String s = "({})";
+        String s = "()[]{}";
+        // String s = "({})";
         boolean valid = new Solution().isValid(s);
         System.out.println(valid);
     }

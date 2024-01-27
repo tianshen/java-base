@@ -112,6 +112,10 @@ public class AppTest {
         duck.swim();
         duck.fly();
         duck.display();
+
+        DecoyDuck decoyDuck = new DecoyDuck();
+        decoyDuck.display();
+        decoyDuck.swim();
     }
 }
 

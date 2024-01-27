@@ -54,6 +54,7 @@ public class Solution {
         ListNode dummy = new ListNode(0);
         // 哑节点的next指向头结点
         dummy.next = head;
+
         // 给哑节点设置一个临时变量
         ListNode temp = dummy;
         while (temp.next != null && temp.next.next != null) {

@@ -10,6 +10,8 @@ public class MapTest {
 
         Map<String, String> map = new HashMap<>();
         map.put("name", "jiwei");
+        map.put("age", "14");
+        map.put("sex", "15");
         Set<String> set = map.keySet();
         System.out.println("...");
         for(String s : set) {

@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.leetcode.二叉树的深度;
+package com.example.base.数据结构和算法.leetcode.二叉树.二叉树的深度;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,5 +1,8 @@
 package com.example.base.数据结构和算法.leetcode.链表.合并有序链表;
 
+import com.example.base.数据结构和算法.leetcode.链表.ListNode;
+import com.example.base.数据结构和算法.leetcode.链表.ListNodeUtil;
+
 public class Solution {
     public static class ListNode {
         int val;
@@ -9,6 +12,42 @@ public class Solution {
             this.val = i;
         }
     }
+
+
+    public static ListNode mergeTwoListNode05(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
+
+        ListNode dummy = new ListNode(-1);
+        ListNode pre = dummy;
+
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                pre.next = l1;
+                l1 = l1.next;
+            } else {
+                pre.next = l2;
+                l2 = l2.next;
+            }
+            pre = pre.next;
+        }
+        if (l1 != null) {
+            pre.next= l1;
+        }
+        if (l2 != null) {
+            pre.next = l2;
+        }
+        return dummy.next;
+    }
+
+
+
+
+
 
     public static ListNode mergeTwoLists(ListNode head1, ListNode head2) {
         if (head1 == null || head2 == null) {
@@ -103,7 +142,12 @@ public class Solution {
         ListNode list2 = new ListNode(2);
         list2.next = new ListNode(4);
         list2.next.next = new ListNode(7);
-        mergeTwoLists3(list1, list2);
+        ListNode listNode = mergeTwoListNode05(list1, list2);
+        ListNode temp = listNode;
+        while (temp != null) {
+            System.out.println(temp.val);
+            temp = temp.next;
+        }
     }
 
 }

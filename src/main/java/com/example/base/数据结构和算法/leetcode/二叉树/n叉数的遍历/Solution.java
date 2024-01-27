@@ -8,6 +8,10 @@ import com.example.base.数据结构和算法.leetcode.二叉树.TreeNodeN;
  */
 public class Solution {
 
+    /**
+     * 多叉树的遍历过程
+     * @param root
+     */
     public void traverse(TreeNodeN root) {
         if (root == null) {
             return;

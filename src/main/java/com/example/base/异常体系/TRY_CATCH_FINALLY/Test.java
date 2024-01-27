@@ -124,6 +124,13 @@ public class Test {
     }
 
 
+    /**
+     * try: 2
+     * catch:3
+     * finally: 4
+     * return: 5
+     * @return
+     */
     private static int testReturn5() {
         int i = 1;
         try {

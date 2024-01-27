@@ -2,6 +2,7 @@ package com.example.base.并发编程.semaphore;
 
 import java.util.Random;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 public class TestCar {
 
@@ -21,6 +22,7 @@ public class TestCar {
                             System.out.println("车位不足，请耐心等待");
                         }
                         semaphore.acquire();//获取令牌尝试进入停车场
+                        semaphore.tryAcquire(100, TimeUnit.MILLISECONDS);
                         System.out.println(Thread.currentThread().getName()+"成功进入停车场");
                         Thread.sleep(new Random().nextInt(10000));//模拟车辆在停车场停留的时间
                         System.out.println(Thread.currentThread().getName()+"驶出停车场");

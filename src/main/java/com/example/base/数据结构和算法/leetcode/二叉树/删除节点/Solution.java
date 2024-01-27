@@ -46,6 +46,7 @@ public class Solution {
     /**
      * 删除叶子节点是target的所有的叶子节点
      * 后序遍历的时候可以自下向上的判断 可能一个叶子节点删除了  但是他的根节点又变成了叶子节点  这个时候还要把这个叶子节点删了
+     * 前中后序递归的位置问题
      * @param root
      * @param target
      * @return

@@ -15,7 +15,7 @@ public class Solution {
 
         String s = "ABBCBECODEBANC";
         String t = "ABC";
-        String window = minWindow1(s, t);
+        String window = minWindow02(s, t);
         System.out.println(window);
 
     }

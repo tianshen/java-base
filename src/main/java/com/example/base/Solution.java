@@ -4,15 +4,26 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        int[] array = new int[]{1, 1, 2, 2, 3, 3, 3, 5, 5, 5, 6, 8, 8, 9};
-        int index = binarySearchDemo(array, 5);
-        System.out.println(index);
-        int index2 = binarySearchDemo2(array, 5);
-        System.out.println(index2);
-        int index3 = binarySearchDemo3(array, 5);
-        System.out.println(index3);
-        int index4 = binarySearch4(array, 5);
-        System.out.println(index4);
+
+        UserTest[] userTests = new UserTest[3];
+        UserTest userTest = new UserTest();
+        userTest.setAge(10);
+        userTests[0] = userTest;
+        for (UserTest user : userTests) {
+            int age = user.getAge();
+            System.out.println(age);
+        }
+
+
+//        int[] array = new int[]{1, 1, 2, 2, 3, 3, 3, 5, 5, 5, 6, 8, 8, 9};
+//        int index = binarySearchDemo(array, 5);
+//        System.out.println(index);
+//        int index2 = binarySearchDemo2(array, 5);
+//        System.out.println(index2);
+//        int index3 = binarySearchDemo3(array, 5);
+//        System.out.println(index3);
+//        int index4 = binarySearch4(array, 5);
+//        System.out.println(index4);
     }
 
     /**
