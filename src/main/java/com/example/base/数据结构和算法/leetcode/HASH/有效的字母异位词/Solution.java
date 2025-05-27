@@ -1,6 +1,7 @@
 package com.example.base.数据结构和算法.leetcode.HASH.有效的字母异位词;
 
 class Solution {
+
     public boolean isAnagram(String s, String t) {
         int[] count1 = encode(s);
         int[] count2 = encode(t);
@@ -14,11 +15,18 @@ class Solution {
         return true;
     }
 
+    public static int count01() {
+        int delta = 'b' - 'a';
+        System.out.println(delta);
+        return delta;
+    }
+
     // 计算字符的出现次数
     int[] encode(String s) {
         int[] count = new int[26];
         for (char c : s.toCharArray()) {
             int delta = c - 'a';
+            // count[i]代表这个位置的值
             count[delta]++;
         }
         return count;
@@ -52,9 +60,11 @@ class Solution {
 
     public static void main(String[] args) {
 
-        Solution solution = new Solution();
-        String acb = solution.encode01("acb");
-        System.out.println(acb);
+        int i = count01();
+
+//        Solution solution = new Solution();
+//        String acb = solution.encode01("acb");
+//        System.out.println(acb);
 
     }
 }

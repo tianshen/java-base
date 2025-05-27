@@ -50,16 +50,19 @@ public class HighArray {
     public boolean delete(long value) {
         int j;
         for (j = 0; j < nElems; j++) {
+            // 拿到要删除的元素坐标
             if (a[j] == value) {
+                // 跳出循环 不是return
                 break;
             }
         }
 
-        //TODO 删除数组指定元素
+        //TODO 删除数组指定元素  如果元素的索引==nElems，说明已经大于最后一个元素了，不会再删除的
         if (j == nElems) {
             return false;
         } else {
             //TODO 通过移位的操作，将被删除的元素的后一个元素赋值给前一个元素
+            // 这个k的作用，是给个临时变量，主要的作用还是移位操作。
             for (int k = j; k < nElems; k++) {
                 a[k] = a[k + 1];
             }

@@ -3,6 +3,9 @@ package com.example.base.数据结构和算法.leetcode.二叉树.二叉树展�
 import com.example.base.数据结构和算法.leetcode.二叉树.Tree;
 import com.example.base.数据结构和算法.leetcode.二叉树.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author xue
  * @date 2023/4/10 14:05
@@ -70,4 +73,23 @@ public class Solution {
         p.right = right;
     }
 
+
+    public void preorderTraversal(TreeNode root, List<TreeNode> list) {
+        if (root != null) {
+            list.add(root);
+            preorderTraversal(root.left, list);
+            preorderTraversal(root.right, list);
+        }
+    }
+
+    public void flatten03(TreeNode root) {
+        List<TreeNode> list = new ArrayList<>();
+        preorderTraversal(root, list);
+        for (int i = 1; i < list.size(); i++) {
+            // 前一个节点主要是为了承载这个右边节点可以一直走下去
+            TreeNode prev = list.get(i - 1), curr = list.get(i);
+            prev.left = null;
+            prev.right = curr;
+        }
+    }
 }

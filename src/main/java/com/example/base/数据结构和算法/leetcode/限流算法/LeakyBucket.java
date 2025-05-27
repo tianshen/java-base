@@ -28,7 +28,9 @@ public class LeakyBucket {
      * @return
      */
     public synchronized boolean tryConsume(long waterRequested) {
+        // 计算当前漏桶中的水剩余多少 重置漏桶中的水以及上次漏水的时间
         leak();
+        // 如果漏桶中的水 + 这次流出的水 <= 容量
         if (water + waterRequested <= capacity) {
             water += waterRequested;
             return true;
@@ -43,10 +45,13 @@ public class LeakyBucket {
     private void leak() {
         long now = System.currentTimeMillis();
         long elapsedTime = now - lastLeakTimestamp;
+        // 这个时间段内有没有水漏出去
         long leakedWater = elapsedTime * rate / 1000;
+        // 如果漏出去的水大于0
         if (leakedWater > 0) {
-            // 漏桶中的水减去这个时间段内漏掉的水量
+            // 漏桶中的水减去这个时间段内漏掉的水量，就是剩余的漏桶中的水
             water = Math.max(0, water - leakedWater);
+            // 上一次漏水的时间
             lastLeakTimestamp = now;
         }
     }

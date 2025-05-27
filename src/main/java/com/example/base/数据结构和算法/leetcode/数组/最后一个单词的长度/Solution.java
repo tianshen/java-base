@@ -7,6 +7,7 @@ class Solution {
         int i = lengthOfLastWord(s);
         System.out.println(i);
     }
+    // 遍历数组
     public static int lengthOfLastWord(String s) {
         if (s == null || s.isEmpty()) {
             return 0;

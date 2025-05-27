@@ -41,7 +41,7 @@ public class Solution {
         while (temp.next != null && temp.next.next != null) {
             ListNode node1 = temp.next;
             ListNode node2 = temp.next.next;
-            dummyNode.next = node2;
+            temp.next = node2;
             node1.next = node2.next;
             node2.next = node1;
             temp = node1;
@@ -60,7 +60,7 @@ public class Solution {
         while (temp.next != null && temp.next.next != null) {
             ListNode node1 = temp.next;
             ListNode node2 = temp.next.next;
-            dummy.next = node2;
+            temp.next = node2;
             node1.next = node2.next;
             node2.next = node1;
             temp = node1;

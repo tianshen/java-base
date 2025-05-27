@@ -109,6 +109,44 @@ public class Solution {
 
     }
 
+
+    /**
+     * 合并两个有序链表
+     * @param list1
+     * @param list2
+     * @return
+     */
+    public static ListNode mergeTwoLists5(ListNode list1, ListNode list2) {
+        // 定义一个虚拟节点    引用的使用和原理解析
+        // 1、dummyHead和pre都指向同一块内存，  （同一块内存）
+        // 2、dummyHead和pre的值是不一样，他们的值是内存地址，固定大小。 （不同的内存地址）
+        ListNode dummyHead = new ListNode(-1);
+        ListNode pre = dummyHead;
+
+        while (list1 != null && list2 != null) {
+            if (list1.val <= list2.val) {
+                pre.next = list1;
+                list1 = list1.next;
+            } else {
+                pre.next = list2;
+                list2 = list2.next;
+            }
+            // pre在移动
+            pre = pre.next;
+        }
+
+        if (list1 != null) {
+            pre.next = list1;
+        }
+        if (list2 != null) {
+            pre.next = list2;
+        }
+        return dummyHead.next;
+    }
+
+
+
+
     public static ListNode mergeTwoLists44(ListNode l1, ListNode l2) {
         // 虚拟头结点
         ListNode dummy = new ListNode(-1), p = dummy;

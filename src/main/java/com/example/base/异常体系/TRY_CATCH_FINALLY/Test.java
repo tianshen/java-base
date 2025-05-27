@@ -142,12 +142,14 @@ public class Test {
         } catch (Exception e) {
             i++;
             System.out.println("catch:" + i);
-            //return i;
+            return i;
         } finally {
             i++;
             System.out.println("finally:" + i);
-            //return i;
+            // return i;
         }
-        return 5;
+        // return 5;
     }
+
+
 }

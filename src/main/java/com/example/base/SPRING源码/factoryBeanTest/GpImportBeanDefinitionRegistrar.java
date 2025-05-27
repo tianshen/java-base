@@ -20,7 +20,7 @@ public class GpImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
 
         DefineFactoryBean factoryBean = new DefineFactoryBean();
         BeanDefinitionBuilder definition = BeanDefinitionBuilder.genericBeanDefinition(
-                IHelloService.class, () -> factoryBean.getObject());
+                IHelloService.class, factoryBean::getObject);
         BeanDefinition beanDefinition = definition.getBeanDefinition();
         registry.registerBeanDefinition("helloService", beanDefinition);
     }

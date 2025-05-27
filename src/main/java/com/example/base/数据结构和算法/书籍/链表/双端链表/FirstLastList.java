@@ -38,7 +38,9 @@ public class FirstLastList {
         if (isEmpty()) {
             last = newLink;
         }
+        // first就是代表的头结点，既然新增了一个链接点，那自然新增的链接的next就指向了原来的头结点，也就是first。
         newLink.next = first;
+        // 现在新增的节点是newLink，那自然first就指向newLink
         first = newLink;
     }
 
@@ -55,7 +57,7 @@ public class FirstLastList {
             // first指向新节点
             first = newLink;
         } else {
-            // last指向新节点
+            // last指向新节点  原理：last就是最后一个节点，last.next就指向了新增的节点
             last.next = newLink;
         }
         // last指向新节点

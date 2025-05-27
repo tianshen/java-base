@@ -58,6 +58,7 @@ public class ArrayApp {
                 break;
             }
         }
+        // 删除数组元素 将后一个值赋值给前一个值
         for (int k = j; k < nElems; k++) {
             arr[k] = arr[k + 1];
         }

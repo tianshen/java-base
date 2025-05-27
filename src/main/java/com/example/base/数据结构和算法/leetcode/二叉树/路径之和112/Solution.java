@@ -51,6 +51,7 @@ public class Solution {
 
 
 
+    // 遍历的方式
     public boolean traverse(TreeNode root, int curSum, int target) {
         if (root == null) {
             return true;
@@ -116,7 +117,7 @@ public class Solution {
         if (root == null) {
             return false;
         }
-
+        // 左节点为空 右节点为空
         if (root.left == null && root.right == null) {
             return root.val == target;
         }

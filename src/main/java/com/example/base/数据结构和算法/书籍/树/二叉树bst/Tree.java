@@ -48,9 +48,11 @@ public class Tree {
             Node current = root;
             Node parent;
             while (true) {
+                // 使用parent来存储遇到的最后一个不是null的节点。必须要这样做，因为current在查找的过程中会变成null，才能发现它查过的上一个节点没有一个对应的子节点，如果不存储parent，就会失去插入新节点的位置。
                 parent = current;
                 if (id < current.iData) {
                     current = current.leftChild;
+                    // 判断子节点为null，则把新增的节点链接到父节点上
                     if (current == null) {
                         parent.leftChild = newNode;
                         return;
@@ -222,6 +224,7 @@ public class Tree {
         Node current = root;
         Node last = null;
         while (current != null) {
+            // 临时变量 最后的一个不为null的节点
             last = current;
             current = current.leftChild;
         }

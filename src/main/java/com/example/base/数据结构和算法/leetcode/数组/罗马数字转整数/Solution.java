@@ -5,7 +5,7 @@ import java.sql.SQLOutput;
 public class Solution {
 
     public static void main(String[] args) {
-        String s = "IXXV";
+        String s = "MCMXCIV";
         int i = romanToInt(s);
         System.out.println(i);
     }

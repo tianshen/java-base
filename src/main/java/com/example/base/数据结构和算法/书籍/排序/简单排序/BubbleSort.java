@@ -5,6 +5,8 @@ package com.example.base.数据结构和算法.书籍.排序.简单排序;
  *      从队列的最左边开始，比较0号位置和1号位置的队员。如果左边的队员高，就让两个队员交换。如果右边的队员高，就什么也不做。
  *      然后右移一个位置，比较1号位置和2号位置的队员，和刚才一样，如果左边的队员高，则两个队员交换位置。
  *      时间复杂度为O(n^2)
+ *
+ *      两两比较位置，每一轮下来都把最高的一个元素放到最后一位
  */
 
 public class BubbleSort {
@@ -53,6 +55,20 @@ public class BubbleSort {
             }
         }
     }
+
+
+    private static void bubbleSort05(long[] arr) {
+        int i, j;
+        for (i = 0; i < arr.length - 1; i++) {
+            for (j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr, j, j + 1);
+                }
+            }
+        }
+    }
+
+
 
     /**
      * 交换位置

@@ -34,7 +34,6 @@ public class Solution {
             } else if (sb.charAt(sb.length() - 1) != ' ') {
                 sb.append(c);
             }
-
             ++left;
         }
         return sb;
@@ -50,16 +49,21 @@ public class Solution {
     public static void reverse(StringBuilder sb, int left, int right) {
         while (left < right) {
             char tmp = sb.charAt(left);
+            // 设置左边为右边的值
             sb.setCharAt(left, sb.charAt(right));
+            // 设置右边为左边的值
             sb.setCharAt(right, tmp);
+            // 左边++
             left++;
+            // 右边++
             right--;
         }
     }
 
     /**
      * 反转每个单词
-     * @param sb
+     *
+     * @param sb = oamoam dlrow olleh
      */
     public static void reverseEachWord(StringBuilder sb) {
         int n = sb.length();

@@ -47,4 +47,23 @@ public class Solution {
         traverse(root.left);
         traverse(root.right);
     }
+
+
+
+
+
+
+
+
+    public void traverse01(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+
+        traverse01(root.left);
+        traverse01(root.right);
+    }
 }

@@ -6,6 +6,9 @@ import com.example.base.数据结构和算法.leetcode.链表.ListNodeUtil;
 /**
  * @author xue
  * @date 2023/4/8 17:37
+ *
+ * 发现是由L摘取第一个元素，再摘取倒数第一个元素…依次合并成的。
+ * 为了方便链表后半段取元素，需要先将L后半段原地逆置，否则每取最后一个节点都需要遍历一次链表。
  */
 public class Solution {
 
@@ -34,7 +37,7 @@ public class Solution {
 
         // 2. 断开中点，反转后半部分
         ListNode head2 = null, next = slow.next;
-        slow.next = null;
+        slow.next = null; // 断开链表
         slow = next;
         while (slow != null) {
             next = slow.next;

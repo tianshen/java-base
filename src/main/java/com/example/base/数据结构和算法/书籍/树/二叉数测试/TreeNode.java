@@ -44,6 +44,8 @@ public class TreeNode {
         }
     }
 
+
+    // 遍历
     public List<List<Long>> levelOrder(Node root) {
         List<List<Long>> ret = new ArrayList<>();
         if (root == null) {

@@ -58,6 +58,22 @@ public class ThreadTest {
 //        A a = new A();
 //        a.run();
 
+        Thread thread1 = new Thread() {
+            @Override
+            public void run() {
+                super.run();
+            }
+        };
+
+        // 继承
+        B b = new B();
+        b.start();
+
+        // 实现runnable
+        Thread a = new Thread(new A());
+        a.start();
+
+
 
         Thread thread = new Thread(new Runnable() {
             @Override

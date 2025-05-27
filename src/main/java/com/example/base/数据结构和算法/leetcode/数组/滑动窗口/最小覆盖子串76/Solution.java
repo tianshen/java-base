@@ -21,6 +21,73 @@ public class Solution {
     }
 
 
+    /**
+     * 最小覆盖子串
+     * @param s
+     * @param t
+     * @return
+     */
+    public static String minWindow05(String s, String t) {
+        // 定义两个map，存储window和need的数据
+        Map<Character, Integer> window = Maps.newHashMap();
+        Map<Character, Integer> need = Maps.newHashMap();
+        // 初始化need
+        for (char c : t.toCharArray()) {
+            need.put(c, need.getOrDefault(c, 0) + 1);
+        }
+        int start = 0;
+        int len = Integer.MAX_VALUE;
+        int valid = 0;
+        int left = 0;
+        int right = 0;
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            right++;
+            if (need.containsKey(c)) {
+                window.put(c, window.getOrDefault(c, 0) + 1);
+                if (window.get(c).equals(need.get(c))) {
+                    valid++;
+                }
+            }
+            while (valid == need.size()) {
+                if (right - left < len) {
+                    start = left;
+                    len = right - left;
+                }
+                char d = s.charAt(left);
+                left++;
+                if (need.containsKey(d)) {
+                    if (window.get(d).equals(need.get(d))) {
+                        valid--;
+                    }
+                    window.put(d, window.get(d) - 1);
+                }
+            }
+        }
+        return len == Integer.MAX_VALUE ? "" : s.substring(start, start + len);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static String minWindow02(String s, String t) {
 
         // 定义两个map 存储window的数据和need的数据
@@ -59,7 +126,8 @@ public class Solution {
             // 判断是否满足缩小窗口的条件
             while (valid == need.size()) {
 
-                // 满足    然后更新子串的开始索引和大小
+                // 满足条件    然后更新子串的开始索引和大小
+                // 这个len已经记录了最下的覆盖长度 没有
                 if (right - left < len) {
                     start = left;
                     len = right -left;

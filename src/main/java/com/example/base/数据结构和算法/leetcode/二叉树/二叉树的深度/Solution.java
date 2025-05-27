@@ -1,6 +1,8 @@
 package com.example.base.数据结构和算法.leetcode.二叉树.二叉树的深度;
 
+import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Solution {
@@ -31,6 +33,7 @@ public class Solution {
         }
         int leftDepth = maxDepth(root.left);
         int rightDepth = maxDepth(root.right);
+        // +1这块处理的
         return Math.max(leftDepth, rightDepth) + 1;
     }
 
@@ -61,6 +64,40 @@ public class Solution {
         }
         return res;
     }
+
+    public static int maxDepth02(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        List<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int res = 0;
+        while (!queue.isEmpty()) {
+            // 这个temp的主要作用就是为了记录这一层的节点，然后通过这些节点去寻找下一层的节点
+            List<TreeNode> temp = new LinkedList<>();
+            for (TreeNode node : queue) {
+                if (node.left != null) {
+                    temp.add(node.left);
+                }
+                if (node.right != null) {
+                    temp.add(node.right);
+                }
+            }
+            queue = temp;
+            res++;
+        }
+        return res;
+
+    }
+
+
+
+
+
+
+
+
 
 
 }

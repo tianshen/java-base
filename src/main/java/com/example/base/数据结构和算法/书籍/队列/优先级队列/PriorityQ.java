@@ -34,6 +34,7 @@ public class PriorityQ {
             // 拿插入的元素和队列中元素循环进行比较，从后往前比较
             for (j = nItems - 1; j >= 0; j--) {
                 // 直到插入的元素小大于循环比较的中元素，即找到插入的位置，将原始位置的元素及以后的元素向后移动一位
+                // 最大的放在最前面
                 if (item > queArray[j]) {
                     queArray[j + 1] = queArray[j];
                 } else {

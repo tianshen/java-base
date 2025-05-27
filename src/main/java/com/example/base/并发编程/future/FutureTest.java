@@ -20,10 +20,14 @@ public class FutureTest {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-//        ExecutorService executorService = Executors.newSingleThreadExecutor();
-//        Future future = executorService.submit(new ImplCallable());
-//        String sss = (String) future.get();
-//        System.out.println(sss);
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future future = executorService.submit(new ImplCallable());
+        String sss = (String) future.get();
+
+
+        System.out.println(sss);
+
+
 
         FutureTask task = new FutureTask(new Callable() {
             @Override

@@ -8,6 +8,7 @@ import java.util.Map;
 class Solution {
     public boolean canConstruct(String a, String b) {
         int[] cnt = new int[26];
+        // 对cnt[c - 'a']进行加减
         for (char c : b.toCharArray()) {
             cnt[c - 'a']++;
         }

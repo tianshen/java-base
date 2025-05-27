@@ -7,6 +7,7 @@ import java.util.Random;
  * @date 2020/12/25 15:21
  * 高效的查找算法： 有序数组   二叉查找数   平 衡二叉树    跳跃表
  * 跳跃表： 缺点是存在一定的数据冗余，达到以空间换时间的目的
+ *         跳表是可以实现二分查找的有序链表
  * 特征：
  *      1、一个跳跃表应该有若干个层（Level）链表组成；
  *      2、跳跃表中最底层的链表包含所有数据； 每一层链表中的数据都是有序的；
@@ -17,6 +18,7 @@ import java.util.Random;
  */
 public class SkipList {
 
+    //
     public int n;
 
     public int h;
@@ -81,6 +83,7 @@ public class SkipList {
         }
     }
 
+    // 构建跳表过程
     public Object put(Integer key, Object value) {
         SkipListEntry p, q;
         int i = 0;

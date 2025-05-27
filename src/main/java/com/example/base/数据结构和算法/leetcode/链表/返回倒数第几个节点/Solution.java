@@ -37,16 +37,18 @@ public class Solution {
     }
 
 
-
+    /**
+     * 第一个指针先走k步，然后第二个指针跟着走
+     * @param head
+     * @param k
+     * @return
+     */
     public int kthToLast(ListNode head, int k) {
-
         ListNode first = head;
         ListNode second = head;
-
         while (k-- > 0) {
             first = first.next;
         }
-
         while (first.next != null) {
             first = first.next;
             second = second.next;

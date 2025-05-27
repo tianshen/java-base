@@ -84,14 +84,16 @@ public class Solution {
      * @return
      */
     public static boolean isValidBts(TreeNode root, TreeNode max, TreeNode min) {
-
+        // 根节点为null
         if (root == null) {
             return true;
         }
 
+        // 根节点小于右子树
         if (max != null && root.val > max.val) {
             return false;
         }
+        // 根节点大于左子树
         if (min != null && root.val < min.val) {
             return false;
         }

@@ -13,6 +13,7 @@ public class Solution {
 
     public int helper(TreeNode root, int i){
         if (root == null) return 0;
+        // 这个才是关键点
         int temp = i * 10 + root.val;
         if (root.left == null && root.right == null)
             return temp;

@@ -2,7 +2,7 @@ package com.example.base.设计模式.责任链模式.sentinel;
 
 public class DefaultProcessorSlotChain<T> extends ProcessorSlotChain<T> {
 
-    //初始化头检点
+    //初始化头节点
     AbstractLinkedProcessorSlot<T> first = new AbstractLinkedProcessorSlot<T>() {
         @Override
         public void processHandler(T param) {

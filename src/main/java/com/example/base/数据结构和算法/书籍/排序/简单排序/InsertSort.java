@@ -38,6 +38,19 @@ public class InsertSort {
         }
     }
 
+    public static void insertSort001(long[] arr) {
+        int out, in;
+        for (out = 1; out < arr.length; out++) {
+            long temp = arr[out];
+            in = out;
+            while (in > 0 && arr[in - 1] >= temp) {
+                arr[in] = arr[in - 1];
+                in--;
+            }
+            arr[in] = temp;
+        }
+    }
+
     /**
      * 插入排序
      * @param arr

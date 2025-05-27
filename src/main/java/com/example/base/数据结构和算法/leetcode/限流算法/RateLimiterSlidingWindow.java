@@ -46,6 +46,7 @@ public class RateLimiterSlidingWindow {
     public synchronized boolean tryAcquire() {
         long currentTimeMillis = System.currentTimeMillis();
         // 1. 计算当前时间窗口
+        // 有点扯
         int currentIndex = (int)(currentTimeMillis % windowSize / (windowSize / windowCount));
         // 2.  更新当前窗口计数 & 重置过期窗口计数
         int sum = 0;

@@ -6,6 +6,9 @@ package com.example.base.数据结构和算法.书籍.链表.单向链表;
  */
 public class LinkListX {
 
+    /**
+     * 链表中第一个链接点的引用，它是唯一的链表需要维护的永久信息
+     */
     private LinkX first;
 
     /**
@@ -16,7 +19,10 @@ public class LinkListX {
      */
     public void insertFirst(int id, int dd) {
         LinkX newLinkX = new LinkX(id, dd);
+        // first字段只是一个“引用”，这个引用的值就是一个链接点的内存地址，
+        // 所以新创建的节点的next = first，表示将新创建的节点链接到原来的头结点
         newLinkX.next = first;
+        // first链接到新创建的节点上
         first = newLinkX;
     }
 
@@ -26,8 +32,11 @@ public class LinkListX {
      * @return
      */
     public LinkX deleteFirst() {
+        // 当前的first的值其实就是头结点
         LinkX temp = first;
+        // 修改first的值，把first指向头结点的下一个节点，也就是 first = first.next;
         first = first.next;
+        // 返回头结点
         return temp;
     }
 
@@ -55,7 +64,7 @@ public class LinkListX {
     }
 
     /**
-     * 删除指定的节点
+     * 删除指定的节点   删除指定节点
      * @param id
      */
     public void delete(int id) {

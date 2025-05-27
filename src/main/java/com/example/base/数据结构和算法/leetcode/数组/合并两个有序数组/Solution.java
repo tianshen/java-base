@@ -25,12 +25,14 @@ public class Solution {
     /**
      * 合两个有序数组
      *
+     *
      * @param A
      * @param m
      * @param B
      * @param n
      */
     public static void merge04(int[] A, int m, int[] B, int n) {
+
         int i = m - 1;
         int j = n - 1;
         int index = m + n - 1;

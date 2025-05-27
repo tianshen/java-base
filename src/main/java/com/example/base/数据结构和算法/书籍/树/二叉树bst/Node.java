@@ -7,8 +7,11 @@ package com.example.base.数据结构和算法.书籍.树.二叉树bst;
 public class Node {
 
     int iData;
+
     double fData;
+    // 左子节点
     Node leftChild;
+    // 右子节点
     Node rightChild;
 
     public void displayNode() {

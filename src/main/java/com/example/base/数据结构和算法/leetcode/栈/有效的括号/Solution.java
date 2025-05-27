@@ -8,8 +8,8 @@ import java.util.*;
 class Solution {
 
     public static void main(String[] args) {
-        String s = "()[]{}";
-        // String s = "({})";
+        // String s = "()[]{}";
+        String s = "({[})";
         boolean valid = new Solution().isValid(s);
         System.out.println(valid);
     }

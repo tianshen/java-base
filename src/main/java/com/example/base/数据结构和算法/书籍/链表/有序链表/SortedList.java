@@ -30,6 +30,7 @@ public class SortedList {
         if (previous == null) {
             first = newLink;
         } else {
+            // 前继节点不为null，前继节点的next指针就指向newLink了
             previous.next = newLink;
         }
         newLink.next = current;

@@ -31,18 +31,25 @@ public class Solution {
 
     }
 
+    /**
+     * 返回每一层的节点
+     * @param root
+     * @return
+     */
     public ArrayList<ArrayList<Integer>> levelOrderTest(TreeNode root) {
         if (root == null) {
             return null;
         }
         ArrayList<ArrayList<Integer>> res = new ArrayList();
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        // offer 添加一个元素并返回true
         queue.offer(root);
 
         while (!queue.isEmpty()) {
             int size = queue.size();
             ArrayList<Integer> list = new ArrayList();
             for (int i = 0; i <= size; ++i) {
+                // 移除并返回队列头部元素
                 TreeNode node = queue.poll();
                 list.add(node.val);
                 if (node.left != null) {

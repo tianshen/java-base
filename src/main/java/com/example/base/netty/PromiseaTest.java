@@ -15,6 +15,9 @@ public class PromiseaTest {
         Promise promise = new DefaultPromise(executor);
 
         // 下面给这个 promise 添加两个 listener
+        // 添加监听器
+        // 监听器的实现原理  springboot中使用（重要的知识点）
+
         promise.addListener(new GenericFutureListener<Future<Integer>>() {
             @Override
             public void operationComplete(Future future) throws Exception {

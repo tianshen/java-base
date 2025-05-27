@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import org.assertj.core.util.Lists;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,8 +24,8 @@ public class Solution {
 
     public static List<Integer> findAnagrams(String t, String s) {
 
-        Map<Character, Integer> need = Maps.newHashMap();
-        Map<Character, Integer> window = Maps.newHashMap();
+        Map<Character, Integer> need = new HashMap<>();
+        Map<Character, Integer> window = new HashMap<>();
 
         for (char c : t.toCharArray()) {
             need.put(c, need.getOrDefault(c, 0) + 1);

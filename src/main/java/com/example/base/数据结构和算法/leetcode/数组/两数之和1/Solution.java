@@ -80,7 +80,7 @@ public class Solution {
      *
      * @param nums
      * @param target
-     * @return
+     * @return  map中前面放的值，后面放的索引
      */
     public int[] twoSum04(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
