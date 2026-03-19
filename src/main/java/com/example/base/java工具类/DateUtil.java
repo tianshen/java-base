@@ -186,5 +186,54 @@ public class DateUtil {
         return result + more;
     }
 
+    public static Date parseDate(String dateStr) throws ParseException {
+        return parseDate(dateStr, FORMAT_DEFAULT);
+    }
 
+    public static Date parseDate(String dateStr, String format) throws ParseException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+        return dateFormat.parse(dateStr);
+    }
+
+
+    /**
+     * 将时间字符串转换为LocalDateTime
+     * @param dateStr 时间字符串
+     * @param pattern 时间格式
+     * @return LocalDateTime
+     */
+    public static LocalDateTime parseLocalDateTime(String dateStr, String pattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+        return LocalDateTime.parse(dateStr, formatter);
+    }
+
+    /**
+     * 将时间字符串转换为LocalDate
+     * @param dateStr 时间字符串
+     * @param pattern 时间格式
+     * @return LocalDate
+     */
+    public static LocalDate parseLocalDate(String dateStr, String pattern) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+        return LocalDate.parse(dateStr, formatter);
+    }
+
+    /**
+     * 将时间字符串按默认格式(yyyy-MM-dd)转换为LocalDate
+     * @param dateStr 时间字符串
+     * @return LocalDate
+     */
+    public static LocalDate parseLocalDate(String dateStr) {
+        return parseLocalDate(dateStr, FORMAT_DEFAULT);
+    }
+
+    /**
+     * 将时间字符串按默认格式(yyyy-MM-dd HH:mm:ss)转换为LocalDateTime
+     * @param dateStr 时间字符串
+     * @return LocalDateTime
+     */
+    public static LocalDateTime parseLocalDateTime(String dateStr) {
+        return parseLocalDateTime(dateStr, FORMAT_ALL);
+    }
 }
+

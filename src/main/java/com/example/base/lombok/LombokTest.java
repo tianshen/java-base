@@ -8,6 +8,8 @@ public class LombokTest {
                 .setName("maomao")
                 .setAge(12);
 
+        System.out.println(student );
+
 
 
     }
