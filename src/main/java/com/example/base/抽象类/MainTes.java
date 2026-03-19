@@ -4,12 +4,12 @@ public class MainTes {
 
     public static void main(String[] args) {
 
-        new AbsTest(){
-            @Override
-            public void test() {
-                super.test();
-            }
-        };
+//        new AbsTest(){
+//            @Override
+//            public void test() {
+//                super.test();
+//            }
+//        };
 
     }
 }

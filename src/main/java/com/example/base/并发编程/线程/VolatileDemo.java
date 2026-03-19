@@ -1,0 +1,36 @@
+package com.example.base.并发编程.线程;
+
+/**
+ * 线程交替执行 线程间的通信
+ */
+public class VolatileDemo {
+
+    private static volatile boolean flag = true;
+
+    public static void main(String[] args) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    if (flag) {
+                        System.out.println("trun on");
+                        flag = false;
+                    }
+                }
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    if (!flag) {
+                        System.out.println("trun off");
+                        flag = true;
+                    }
+                }
+            }
+        }).start();
+    }
+}

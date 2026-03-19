@@ -1,5 +1,9 @@
 package com.example.base.进制和位运算;
 
+import java.util.ArrayList;
+
+import org.assertj.core.util.Lists;
+
 public class BitWiseTest {
 
     public static void main(String[] args) {
@@ -87,6 +91,7 @@ public class BitWiseTest {
         int i1 = 2 & 4095;
         System.out.println(i);
         System.out.println(i1);
+
     }
 
 }

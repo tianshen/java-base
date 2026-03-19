@@ -8,6 +8,10 @@ import java.util.concurrent.Future;
 public class CompletableFutureTest {
 
     public static void main(String[] args) {
+
+
+
+        //1、使用runAsync或supplyAsync发起异步调用   生成一个AsyncSupply，提交到线程池中
         ExecutorService executor = Executors.newFixedThreadPool(5);
         //1、使用runAsync或supplyAsync发起异步调用   生成一个AsyncSupply，提交到线程池中
         CompletableFuture<String> cf1 = CompletableFuture.supplyAsync(() -> {
@@ -48,5 +52,4 @@ public class CompletableFutureTest {
             return "result";
         });
     }
-
 }

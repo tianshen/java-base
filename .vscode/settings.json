@@ -1,0 +1,8 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "commentTranslate.hover.enabled": true,
+    "maven.view": "flat",
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.project.explorer.showNonJavaResources": false,
+    "java.dependency.syncWithFolderExplorer": false
+}
